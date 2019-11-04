@@ -10,3 +10,5 @@ for row in range(1,10)
              print ('',end='\t')
     print('')  
    
+   
+   # python 课堂练习
