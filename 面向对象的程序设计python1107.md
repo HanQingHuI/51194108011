@@ -496,4 +496,32 @@ tc.talk()
     
 
     AttributeError: 'talkingcaculator' object has no attribute '_talkingcaculator__cacultor'
+    
+    
+    class Calculator:
+    def calculate(self, expression):
+        return eval(expression)
 
+```python        
+class Talker:
+    def talk(self, value):
+        print('My value is:', value)
+        
+class TalkingCalculator:
+    def __init__(self):
+        self.__calculator = Calculator()
+        self.__talker = Talker()
+        self.__value = None
+        
+    def calculate(self, expression):
+        self.__value = self.__calculator.calculate(expression)
+    
+    def talk(self):
+        self.__talker.talk(self.__value)
+    
+
+tc = TalkingCalculator()
+tc.calculate('1 + 2 + 3')
+tc.talk()
+
+```
